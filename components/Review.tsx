@@ -4,9 +4,7 @@ const REVIEWS = [
     { name: "Rahul Sharma", rating: 5, text: "Best computer institute in Kanpur. Faculty is very supportive and course content is up to date.", time: "2 months ago" },
     { name: "Priya Singh", rating: 5, text: "Excellent teaching methods. Got placed right after completing my course. Highly recommended!", time: "3 months ago" },
     { name: "Amit Kumar", rating: 5, text: "ISO certified institute with great infrastructure. The practical sessions are very helpful.", time: "1 month ago" },
-    { name: "Neha Gupta", rating: 5, text: "Very professional staff and clean environment. Learned a lot in a short time.", time: "4 months ago" },
-    { name: "Saurabh Verma", rating: 4, text: "Good courses and affordable fees. Would definitely recommend to friends and family.", time: "5 months ago" },
-    { name: "Pooja Mishra", rating: 5, text: "Centre for Computer Education changed my career. The DCA course was very practical and job-oriented.", time: "2 weeks ago" },
+    
 ];
 
 function Stars({ count }: { count: number }) {

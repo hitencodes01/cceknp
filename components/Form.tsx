@@ -61,7 +61,7 @@ export default function Form() {
                 className="object-contain w-64 h-auto"
               />
               <div className="mt-4 w-full border-t border-dashed border-[#38bbeb]/30" />
-              <p className="mt-3 text-gray-500 text-sm">Enter enrollment number to Verify Certificate</p>
+              <p className="mt-3 text-gray-500 text-sm">Enter Enrollment Number to Verify Certificate</p>
             </div>
 
             {/* Form body */}

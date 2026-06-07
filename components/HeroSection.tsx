@@ -1,12 +1,13 @@
 "use client"
 import Link from "next/link";
 import Threads from "./Threads";
+import Image from "next/image";
 
 const SLIDES = [
   {
-    img: "/logo2.png",
+    img: "/logo.jpeg",
     fit: "contain" as const,       // logo — show full image, no crop
-    bg: "#0a0a0a",                  // dark bg behind contained logo
+    bg: "#360707",                  // dark bg behind contained logo
     tag: "ISO 9001:2015 Certified",
     heading: ["Centre for", "Computer", "Education"],
     accentIdx: 1,
@@ -15,9 +16,9 @@ const SLIDES = [
 ];
 
 export default function HeroSection() {
-  return(
+  return (
     <>
-    <style>{`
+      <style>{`
         :root {
           --accent: #38bbeb;
           --bg: #000;
@@ -270,70 +271,93 @@ export default function HeroSection() {
           .hero-h1 { font-size: clamp(2rem,8vw,2.8rem); }
           .hero-sub { max-width: 100%; color : "white"; }
         }
+          /* ── Logo entrance animation ── */
+@keyframes logoReveal {
+  0%   { clip-path: inset(48% 8% 48% 8% round 8px); opacity: 0; transform: scale(0.92); }
+  60%  { clip-path: inset(0% 0% 0% 0% round 8px);   opacity: 1; transform: scale(1.04); }
+  100% { clip-path: inset(0% 0% 0% 0% round 0px);   opacity: 1; transform: scale(1); }
+}
+
+@keyframes logoGlow {
+  0%, 100% { filter: drop-shadow(0 0 0px transparent); }
+  50%       { filter: drop-shadow(0 0 18px rgba(56,187,235,0.45)); }
+}
+
+@keyframes logoShimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+  
       `}</style>
 
-    <div className="hero-root">
+      <div className="hero-root">
 
-      {/* Thread — full background */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <Threads
-          color={[0.22, 0.73, 0.92]}
-          amplitude={1.5}
-          distance={0.3}
-          enableMouseInteraction={false}
-        />
-      </div>
+        {/* Thread — full background */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <Threads
+            color={[0.22, 0.73, 0.92]}
+            amplitude={1.5}
+            distance={0.3}
+            enableMouseInteraction={false}
+          />
+        </div>
 
-      {/* Vertical divider */}
-      <div className="hero-divider" style={{ position: "relative", zIndex: 10 }} />
+        {/* Vertical divider */}
+        <div className="hero-divider" style={{ position: "relative", zIndex: 10 }} />
 
-      {/* LEFT — image */}
-      <div className="hero-left" style={{ position: "relative", zIndex: 10 }}>
-        <img
-          src="/logo2.png"
-          alt=""
-          aria-hidden="true"
-          className="hero-img hero-img-contain"
-          loading="eager"
-          decoding="async"
-        />
-      </div>
+        {/* LEFT — image */}
+        <div className="hero-left" style={{ position: "relative", zIndex: 10 }}>
+          <Image
+            src="/logo.jpeg"
+            alt=""
+            aria-hidden="true"
+            sizes="50vw"
+            fill
+            priority
+            loading="eager"
+            className="hero-img bg-transparent hero-img-contain"
+            style={{
+              animation:
+                "logoReveal 0.85s cubic-bezier(0.16,1,0.3,1) 0.1s both, logoGlow 3s ease-in-out 1.2s infinite",
+            }}
+          />
+        </div>
 
-      {/* RIGHT — text */}
-      <div className="hero-right" style={{ position: "relative", zIndex: 10 }}>
-        <div className="text-wrap">
+        {/* RIGHT — text */}
+        <div className="hero-right" style={{ position: "relative", zIndex: 10 }}>
+          <div className="text-wrap">
 
-          <div className="hero-tag">
-            <span className="hero-tag-dot" />
-            ISO 9001:2015 Certified
+            <div className="hero-tag">
+              <span className="hero-tag-dot" />
+              ISO 9001:2015 Certified
+            </div>
+
+            <div className="hero-rule" />
+
+            <h1 className="hero-h1">
+              Centre for <br />
+              <span className="accent">Computer</span> <br />
+              Education
+            </h1>
+
+            <p className="text-white hero-sub">
+              Empowering the next generation of digital thinkers — from foundational skills to advanced computing.
+            </p>
+
+            <div className="hero-btns">
+              <Link href="/courses" className="btn-primary">
+                <span>View Courses</span>
+                <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor"
+                    strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </Link>
+              <Link href="/about" className="btn-ghost">About Us</Link>
+            </div>
+
           </div>
-
-          <div className="hero-rule" />
-
-          <h1 className="hero-h1">
-            Centre for <br />
-            <span className="accent">Computer</span> <br />
-            Education
-          </h1>
-
-          <p className="text-white hero-sub">
-            Empowering the next generation of digital thinkers — from foundational skills to advanced computing.
-          </p>
-
-          <div className="hero-btns">
-            <Link href="/courses" className="btn-primary">
-              <span>View Courses</span>
-              <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor"
-                  strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </Link>
-            <Link href="/about" className="btn-ghost">About Us</Link>
-          </div>
-
         </div>
       </div>
-    </div>
-  </>
+    </>
   )
 }

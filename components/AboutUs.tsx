@@ -342,8 +342,7 @@ export default function AboutUs() {
                 </div>
 
                 {/* Grid */}
-
-                <div className="grid p-2 rounded-2xl mt-5 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" style={{ background: "linear-gradient(135deg,#38bbeb  0%, #0a2e24 100%)", }}>
+                <div className="grid md:p-4 rounded-2xl mt-5 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:bg-[linear-gradient(135deg,#38bbeb_0%,#0a2e24_100%)]" >
                     {courses.map((course: any, index: number) => (
                         <div
                             key={course.id}
@@ -352,8 +351,8 @@ export default function AboutUs() {
                                 relative
                                 bg-white
                                 rounded-3xl
-                                border
-                                border-[#38bbeb]/20
+                                border-2
+                                border-[#38bbeb]
                                 p-6
                                 min-h-[300px]
                                 flex
@@ -364,8 +363,7 @@ export default function AboutUs() {
                                 duration-300
                                 hover:-translate-y-2
                                 hover:shadow-2xl
-                                hover:shadow-[#38bbeb]/20
-                                hover:border-[#38bbeb]
+                                hover:shadow-black
                               "
                         >
                             {/* Number Badge */}

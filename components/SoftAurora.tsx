@@ -273,7 +273,9 @@ export default function SoftAurora({
 
     // --- FIX 5: Render loop reads NOTHING from the DOM – only plain JS state ---
     const LERP = 0.05;
-
+    let lastTime = 0;
+    const TARGET_FPS = 30; // 60 se 30 kar do — Aurora ke liye kaafi hai
+    const FRAME_MIN = 1000 / TARGET_FPS;
     function update(time: number) {
       animationFrameId = requestAnimationFrame(update);
 
