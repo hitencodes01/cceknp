@@ -1,4 +1,5 @@
 import AboutUs from "@/components/AboutUs"
+import DonateSection from "@/components/BuyMeACoffee"
 import Footer from "@/components/Footer"
 import Gallery from "@/components/Gallery"
 import HeroSection from "@/components/HeroSection"
@@ -13,6 +14,7 @@ function App() {
       </div>
       <ISOBanner />
       <AboutUs />
+      <DonateSection />
       <Gallery />
       <Footer />
     </>

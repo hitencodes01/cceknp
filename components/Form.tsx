@@ -20,7 +20,7 @@ export default function Form() {
   const [error, setError] = useState<string | null>(null);
   const [student, setStudent] = useState<StudentData | null>(null);
 
-  const dateFields = ["Start Date", "End Date" , "DOB"]
+  const dateFields = ["Start Date", "End Date", "DOB"]
   const handleInput = async () => {
     if (!enrollment.trim()) return;
     setLoading(true);
@@ -61,7 +61,7 @@ export default function Form() {
                 className="object-contain w-64 h-auto"
               />
               <div className="mt-4 w-full border-t border-dashed border-[#38bbeb]/30" />
-              <p className="mt-3 text-gray-500 text-sm">Enter enrollment number to verify Certificate</p>
+              <p className="mt-3 text-gray-500 text-sm">Enter enrollment number to Verify Certificate</p>
             </div>
 
             {/* Form body */}
