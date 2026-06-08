@@ -1,6 +1,7 @@
 "use client"
 import { useReducer } from "react"
 import { submitToSheet, type EnrollmentData } from "../hooks/useGoogleSheet"
+import { CrossIcon } from "lucide-react"
 
 // ── Types ──────────────────────────────────────────────────────────────────
 
@@ -181,7 +182,7 @@ export default function EnrollmentForm({ open, onClose }: Props) {
 
                 {/* Header */}
                 <div className="bg-[#38bbeb] px-6 py-4">
-                    
+
                     <h2 className="mt-0.5 text-2xl font-bold text-white">Enroll Now</h2>
                 </div>
 
@@ -261,7 +262,7 @@ export default function EnrollmentForm({ open, onClose }: Props) {
                     <div className="flex gap-3 pt-1">
                         <button
                             onClick={handleClose}
-                            className="flex-1 rounded-xl border border-slate-200 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50"
+                            className="flex-1 rounded-xl border bg-red-500 border-slate-200 py-2.5 text-sm font-medium text-black hover:bg-red-600"
                         >
                             Cancel
                         </button>
@@ -270,7 +271,7 @@ export default function EnrollmentForm({ open, onClose }: Props) {
                             disabled={state.status === "submitting"}
                             className="flex-1 rounded-xl bg-[#38bbeb] py-2.5 text-sm font-semibold text-white transition hover:bg-[#2aa8d8] disabled:opacity-50"
                         >
-                            {state.status === "submitting" ? "Submitting..." : "Submit"}
+                            {state.status === "submitting" ? "Submitting..." : `Submit`}
                         </button>
                     </div>
 

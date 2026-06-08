@@ -2,6 +2,7 @@
 import { useState } from "react"
 import EnrollmentForm from "./EnrollmentForm"
 import Link from "next/link"
+import { ArrowDownWideNarrow, BookAlert, BookMarked, HamburgerIcon, HomeIcon, LaptopIcon, Menu, PhoneCallIcon } from "lucide-react"
 
 export default function Navbar() {
     const [open, setOpen] = useState<boolean>(false)
@@ -41,42 +42,69 @@ export default function Navbar() {
                     <div className="flex items-center gap-3">
                         <button
                             onClick={() => setOpen(true)}
-                            className="bg-[#38bbeb]  text-white text-sm font-semibold px-5 py-2 rounded-md transition-all duration-200 hover:scale-105 active:scale-95"
+                            className="bg-[#38bbeb] cursor-pointer text-white text-sm font-semibold px-5 py-2 rounded-md transition-all duration-200 hover:scale-105 active:scale-95"
                         >
-                            Apply Now
+                            Enroll Now
                         </button>
 
                         {/* Mobile Hamburger */}
                         <button
-                            className="md:hidden text-white p-1"
+                            className="md:hidden text-white p-1 transition-transform duration-300"
                             onClick={() => setMenuOpen(!menuOpen)}
                         >
-                            <div className="w-5 h-0.5 bg-black mb-1 transition-all" />
-                            <div className="w-5 h-0.5 bg-black mb-1 transition-all" />
-                            <div className="w-5 h-0.5 bg-black transition-all" />
+                            <div
+                                className={`transition-transform duration-300 ${menuOpen ? "rotate-180" : "rotate-0"
+                                    }`}
+                            >
+                                {!menuOpen ? (
+                                    <Menu className="text-[#38bbeb]" />
+                                ) : (
+                                    <ArrowDownWideNarrow className="text-[#38bbeb]" />
+                                )}
+                            </div>
                         </button>
                     </div>
                 </div>
 
                 {/* Mobile Menu */}
                 {menuOpen && (
-                    <div className="md:hidden bg-black/90 border-t border-white/10 px-4 py-4 flex flex-col gap-4">
-                        {["Home", "About", "Courses", "Contact"].map((item) => (
+                    <div
+                        className={`md:hidden overflow-hidden transition-all duration-300 ease-out
+                            ${menuOpen
+                                ? "max-h-96 opacity-100 translate-y-0"
+                                : "max-h-0 opacity-0 -translate-y-2 pointer-events-none"
+                            }`}
+                    >
+                        <div className="bg-black/90 border-t border-white/10 px-4 py-4 flex flex-col gap-4">
+                            {[
+                                { name: "Home", icon: <HomeIcon className="inline" /> },
+                                { name: "About", icon: <BookAlert className="inline" /> },
+                                { name: "Courses", icon: <LaptopIcon className="inline" /> },
+                                { name: "Contact", icon: <PhoneCallIcon className="inline" /> },
+                            ].map((item, index) => (
+                                <Link
+                                    key={item.name}
+                                    href={item.name === "Home" ? "/" : `/${item.name.toLowerCase()}`}
+                                    className={`text-white/80 hover:text-[#38bbeb] text-sm font-medium transition-all duration-300
+                                    ${menuOpen
+                                            ? "opacity-100 translate-x-0"
+                                            : "opacity-0 -translate-x-3"
+                                        }`}
+                                    style={{
+                                        transitionDelay: `${index * 500}ms`,
+                                    }}
+                                    onClick={() => setMenuOpen(false)}
+                                >
+                                    {item.icon} {item.name}
+                                </Link>
+                            ))}
                             <Link
-                                key={item}
-                                href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                                className="text-white/80 hover:text-[#38bbeb] text-sm font-medium transition-colors"
-                                onClick={() => setMenuOpen(false)}
+                                href={"/certificateVerification"}
+                                className="text-white/80 hover:text-[#38bbeb] text-sm  md:text-lg md:font-bold md:text-shadow-2xs text-blue-red-600 font-medium tracking-wide transition-colors duration-200 hover:text-[#38bbeb]"
                             >
-                                {item}
+                                <BookMarked className="inline" /> Certificate Verification
                             </Link>
-                        ))}
-                        <Link
-                            href={"/certificateVerification"}
-                            className="text-white/80 hover:text-[#38bbeb] text-sm  md:text-lg md:font-bold md:text-shadow-2xs text-blue-red-600 font-medium tracking-wide transition-colors duration-200 hover:text-[#38bbeb]"
-                        >
-                            Certificate Verification
-                        </Link>
+                        </div>
                     </div>
                 )}
             </nav>

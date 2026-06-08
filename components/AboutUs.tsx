@@ -85,13 +85,11 @@ export default function AboutUs() {
           background: white;
           border-radius: 18px;
           padding: 28px 24px;
-          border: 4px solid #38bbeb;
+          border: 2px solid #38bbeb;
           display: flex;
           flex-direction: column;
           gap: 10px;
           transition: box-shadow 0.25s ease;
-        }
-        .cce-value-card:hover {
           box-shadow: 0 12px 32px rgba(0,0,0,0.07);
         }
 
@@ -311,7 +309,7 @@ export default function AboutUs() {
                             { title: "Personal attention", desc: "Small batches mean every student gets hands-on guidance, not just lectures." },
                         ].map((v) => (
                             <div className="cce-value-card" key={v.title}>
-                                <div style={{ fontWeight: 700, fontSize: 15, color: "#0a2e24" }}>{v.title}</div>
+                                <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: 15, color: "#0a2e24" }}>{v.title}</div>
                                 <div style={{ fontSize: 14, color: "#5f7a6e", lineHeight: 1.65 }}>{v.desc}</div>
                             </div>
                         ))}
@@ -464,7 +462,7 @@ export default function AboutUs() {
                         className="cce-cta-btn"
                         style={{ background: "white", color: "#38bbeb", flexShrink: 0 }}
                     >
-                        <Link href={"/contact"}> Start Your Journey →</Link>
+                        <Link href={"/contact"}> Enroll Now →</Link>
                     </button>
                 </div>
             </section>
