@@ -133,7 +133,7 @@ export default function CourseSection() {
                   border-white
                   py-3
                   font-semibold
-                  text-[#38bbeb]
+                  text-white
                   transition-all
                   duration-300
                   hover:bg-white

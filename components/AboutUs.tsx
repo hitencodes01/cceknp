@@ -402,14 +402,15 @@ export default function AboutUs() {
                                   justify-center
                                   rounded-xl
                                   border-2
-                                  border-[#38bbeb]
+                                  border-white
+                                  bg-[#38bbeb]
+                                  text-white
                                   py-3
                                   font-semibold
-                                  text-[#38bbeb]
                                   transition-all
                                   duration-300
-                                  hover:bg-[#38bbeb]
-                                  hover:text-white
+                                  hover:bg-white
+                                  hover:text-[#38bbeb]
                                 "
                             >
                                 View Course
