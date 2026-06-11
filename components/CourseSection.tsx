@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const courses = [{ id: "ccc", name: "CCC", image: "CCC.jpeg" }, { id: "olevel", name: "O Level", image: "OLevel.jpeg" }, { id: "dca", name: "DCA", image: "DCA.jpeg" }, { id: "pgdca", name: "PGDCA", image: "PGDCA.jpeg" }, { id: "python12", name: "Python for Class 11 & 12", image: "Python.jpeg" }, { id: "java12", name: "Core Java for Class 11 & 12", image: "Java.jpeg" }, { id: "c", name: "C Course for Graduation", image: "C.jpeg" }, { id: "python", name: "Python Full Course for Graduation", image: "PythonBCA.jpeg" }, { id: "java", name: "Java Course for Graduation", image: "JavaBCA.png" }, { id: "oracleSQL", name: "Oracle SQL Certification Course", image: "Oracle.jpeg" }, { id: "tally", name: "Tally Prime Certification Course", image: "Tally.jpeg" }, { id: "dataAnalytics", name: "Data Analytics", image: "DataAnalytics.jpeg" }, { id: "advExcel", name: "Advanced Excel", image: "AdvancedExcel2.jpeg" }, { id: "hindiEnglishTyping", name: "English Typing Course", image: "HindiEnglish.jpeg" }, { id: "oraclePL", name: "Oracle PL/SQL Certification Course", image: "PLSQL.jpeg" }, { id: "pdp", name: "English Speaking & Personality Development", image: "EnglishSpeaking.jpeg" }, { id: "graphic", name: "Graphic Designing", image: "Graphic.jpeg" }, { id: "website", name: "Website Development", image: "Website.jpeg" }
+const courses = [{ id: "ccc", name: "CCC", image: "CCC.jpeg" }, { id: "olevel", name: "O Level", image: "OLevel.jpeg" }, { id: "dca", name: "DCA", image: "DCA.jpeg" }, { id: "pgdca", name: "PGDCA", image: "PGDCA.jpeg" }, { id: "python12", name: "Python for Class 11 & 12", image: "Python.jpeg" }, { id: "java12", name: "Core Java for Class 11 & 12", image: "Java.jpeg" }, { id: "c", name: "C Language Course", image: "C.jpeg" }, { id: "python", name: "Python Full Course for Graduation", image: "PythonBCA.jpeg" }, { id: "java", name: "Java Course for Graduation", image: "JavaBCA.png" }, { id: "oracleSQL", name: "Oracle SQL Certification Course", image: "Oracle.jpeg" }, { id: "tally", name: "Tally Prime Certification Course", image: "Tally.jpeg" }, { id: "dataAnalytics", name: "Data Analytics", image: "DataAnalytics.jpeg" }, { id: "advExcel", name: "Advanced Excel", image: "AdvancedExcel2.jpeg" }, { id: "hindiEnglishTyping", name: "English Typing Course", image: "HindiEnglish.jpeg" }, { id: "oraclePL", name: "Oracle PL/SQL Certification Course", image: "PLSQL.jpeg" }, { id: "pdp", name: "English Speaking & Personality Development", image: "EnglishSpeaking.jpeg" }, { id: "graphic", name: "Graphic Designing", image: "Graphic.jpeg" }, { id: "website", name: "Website Development", image: "Website.jpeg" }
 ];
 
 export default function CourseSection() {
@@ -127,16 +127,17 @@ export default function CourseSection() {
                   flex
                   items-center
                   justify-center
+                  bg-[#38bbeb]
                   rounded-xl
                   border-2
-                  border-[#38bbeb]
+                  border-white
                   py-3
                   font-semibold
                   text-[#38bbeb]
                   transition-all
                   duration-300
-                  hover:bg-[#38bbeb]
-                  hover:text-white
+                  hover:bg-white
+                  hover:text-[#38bbeb]
                 "
               >
                 View Course
