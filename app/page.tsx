@@ -1,10 +1,11 @@
-import AboutUs from "@/components/AboutUs"
-import DonateSection from "@/components/BuyMeACoffee"
-import Footer from "@/components/Footer"
-import Gallery from "@/components/Gallery"
-import HeroSection from "@/components/HeroSection"
-import ISOBanner from "@/components/ISOBanner"
-import Navbar from "@/components/Navbar"
+import dynamic from "next/dynamic"
+const Navbar = dynamic(() => import("../components/Navbar"))
+const Footer = dynamic(() => import("../components/Footer"))
+const AboutUs = dynamic(() => import("../components/AboutUs"))
+const DonateSection = dynamic(() => import("../components/BuyMeACoffee"))
+const Gallery = dynamic(() => import("../components/Gallery"))
+const HeroSection = dynamic(() => import("../components/HeroSection"))
+const ISOBanner = dynamic(() => import("../components/ISOBanner"))
 function App() {
   return (
     <>

@@ -1,6 +1,9 @@
-import Footer from "@/components/Footer";
-import Form from "@/components/Form";
-import Navbar from "@/components/Navbar";
+import dynamic from "next/dynamic";
+
+const Form = dynamic(() => import("../../components/Form"))
+const Navbar = dynamic(() => import("../../components/Navbar"))
+const Footer = dynamic(() => import("../../components/Footer"))
+
 
 export default function CertificateVerification() {
     return (

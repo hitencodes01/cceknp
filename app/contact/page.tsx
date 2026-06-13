@@ -1,11 +1,12 @@
 "use client"
 import { useState } from "react";
 import { MailIcon, MapPinIcon, PhoneCallIcon } from "lucide-react";
-import Navbar from "@/components/Navbar";
 import Link from "next/link";
-import Footer from "@/components/Footer";
-import EnrollmentForm from "@/components/EnrollmentForm";
-import DonateSection from "@/components/BuyMeACoffee";
+import dynamic from "next/dynamic";
+const Navbar = dynamic(() => import("../../components/Navbar"))
+const Footer = dynamic(() => import("../../components/Footer"))
+const EnrollmentForm = dynamic(() => import("../../components/EnrollmentForm"))
+const DonateSection = dynamic(() => import("../../components/BuyMeACoffee"))
 
 export default function Contact() {
     const [open, setOpen] = useState(true)

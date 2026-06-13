@@ -1,24 +1,24 @@
 "use client"
-
-import CourseLayout from "@/components/CourseLayout";
-import AdExcel from "@/components/courses/AdExcel";
-import CCC from "@/components/courses/CCC";
-import CLang from "@/components/courses/CLang";
-import Data from "@/components/courses/Data";
-import DCA from "@/components/courses/DCA";
-import EnglishSpeaking from "@/components/courses/EnglishSpeaking";
-import Graphic from "@/components/courses/Graphic";
-import HindiEnglishTyping from "@/components/courses/HindiEnglishTyping";
-import Java from "@/components/courses/Java";
-import Java12 from "@/components/courses/Java12";
-import OLevel from "@/components/courses/OLevel";
-import PGDCA from "@/components/courses/PGDCA";
-import PLSQL from "@/components/courses/PLSQL";
-import Python from "@/components/courses/Python";
-import Python12 from "@/components/courses/Python12";
-import SQLExpert from "@/components/courses/SQLExpert";
-import Tally from "@/components/courses/Tally";
-import Website from "@/components/courses/Website";
+import dynamic from "next/dynamic";
+const CourseLayout = dynamic(() => import("../../../components/CourseLayout"))
+const AdExcel = dynamic(() => import("../../../components/courses/AdExcel"))
+const CCC = dynamic(() => import("../../../components/courses/CCC"))
+const CLang = dynamic(() => import("../../../components/courses/CLang"))
+const Data = dynamic(() => import("../../../components/courses/Data"))
+const DCA = dynamic(() => import("../../../components/courses/DCA"))
+const EnglishSpeaking = dynamic(() => import("../../../components/courses/EnglishSpeaking"))
+const Graphic = dynamic(() => import("../../../components/courses/Graphic"))
+const HindiEnglishTyping = dynamic(() => import("../../../components/courses/HindiEnglishTyping"))
+const Java = dynamic(() => import("../../../components/courses/Java"))
+const Java12 = dynamic(() => import("../../../components/courses/Java12"))
+const OLevel = dynamic(() => import("../../../components/courses/OLevel"))
+const PGDCA = dynamic(() => import("../../../components/courses/PGDCA"))
+const PLSQL = dynamic(() => import("../../../components/courses/PLSQL"))
+const Python = dynamic(() => import("../../../components/courses/Python"))
+const Python12 = dynamic(() => import("../../../components/courses/Python12"))
+const SQLExpert = dynamic(() => import("../../../components/courses/SQLExpert"))
+const Tally = dynamic(() => import("../../../components/courses/Tally"))
+const Website = dynamic(() => import("../../../components/courses/Website"))
 import { courses } from "@/lib/courses";
 import { useParams } from "next/navigation";
 import { JSX } from 'react'

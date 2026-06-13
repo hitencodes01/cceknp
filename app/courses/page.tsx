@@ -1,6 +1,7 @@
-import CourseSection from "@/components/CourseSection";
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
+import dynamic from "next/dynamic"
+const CourseSection = dynamic(() => import("../../components/CourseSection"))
+const Navbar = dynamic(() => import("../../components/Navbar"))
+const Footer = dynamic(() => import("../../components/Footer"))
 
 export default function Courses() {
     return (
