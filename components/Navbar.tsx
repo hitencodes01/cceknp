@@ -2,7 +2,7 @@
 import { useState } from "react"
 import EnrollmentForm from "./EnrollmentForm"
 import Link from "next/link"
-import { ArrowDownWideNarrow, BookAlert, BookMarked, HamburgerIcon, HomeIcon, LaptopIcon, Menu, PhoneCallIcon } from "lucide-react"
+import { ArrowDownWideNarrow, BookAlert, BookMarked, Globe, HamburgerIcon, HomeIcon, LaptopIcon, Menu, PhoneCallIcon } from "lucide-react"
 
 export default function Navbar() {
     const [open, setOpen] = useState<boolean>(false)
@@ -35,6 +35,12 @@ export default function Navbar() {
                             className="text-black hover:text-[#38bbeb] text-sm  md:text-lg md:font-bold md:text-shadow-2xs text-blue-red-600 font-medium tracking-wide transition-colors duration-200 hover:text-[#38bbeb]"
                         >
                             Certificate Verification
+                        </Link>
+                        <Link
+                            href={"/online-degree"}
+                            className="text-black hover:text-[#38bbeb] text-sm  md:text-lg md:font-bold md:text-shadow-2xs text-blue-red-600 font-medium tracking-wide transition-colors duration-200 hover:text-[#38bbeb]"
+                        >
+                            Online Degree 
                         </Link>
                     </div>
 
@@ -103,6 +109,12 @@ export default function Navbar() {
                                 className="text-white/80 hover:text-[#38bbeb] text-sm  md:text-lg md:font-bold md:text-shadow-2xs text-blue-red-600 font-medium tracking-wide transition-colors duration-200 hover:text-[#38bbeb]"
                             >
                                 <BookMarked className="inline" /> Certificate Verification
+                            </Link>
+                            <Link
+                                href={"/online-degree"}
+                                className="text-white/80 hover:text-[#38bbeb] text-sm  md:text-lg md:font-bold md:text-shadow-2xs text-blue-red-600 font-medium tracking-wide transition-colors duration-200 hover:text-[#38bbeb]"
+                            >
+                                <Globe className="inline" /> Online Degree
                             </Link>
                         </div>
                     </div>
